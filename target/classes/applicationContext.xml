@@ -3,10 +3,13 @@
 			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			  xmlns:p="http://www.springframework.org/schema/p"
 			  xmlns:context="http://www.springframework.org/schema/context"
+			  xmlns:aop="http://www.springframework.org/schema/aop"
 			  xsi:schemaLocation="http://www.springframework.org/schema/beans 
 			  										http://www.springframework.org/schema/beans/spring-beans.xsd
 			  										http://www.springframework.org/schema/context
-			  										http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+			  										http://www.springframework.org/schema/context/spring-context-4.2.xsd
+			  										http://www.springframework.org/schema/aop
+			  										http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
 	<context:component-scan base-package="com.springwork.biz" />
 	
@@ -17,4 +20,14 @@
 	
 	<bean id="userDAO" class="com.springwork.biz.board.impl.UserDAO"/> 
 -->
+
+<!-- 	<bean id="log" class="com.springwork.biz.common.LogAdvice"/> -->
+	<bean id="log" class="com.springwork.biz.common.Log4jAdvice"/>
+	<aop:config>
+		<aop:pointcut id="allPointcut" expression="execution(* com.springwork.biz..*Impl.*(..))" />	
+		<aop:aspect ref="log">
+			<!-- <aop:before pointcut-ref="allPointcut" method="printLog" /> -->
+			<aop:before pointcut-ref="allPointcut" method="printLogging" />
+		</aop:aspect>
+	</aop:config>
 </beans>

@@ -18,7 +18,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.4.191</version>
+			<version>1.4.196</version>
 		</dependency>
 	
 		<!-- Spring -->
@@ -45,13 +45,12 @@
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
-		</dependency>	
-		
+		</dependency>	 		
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.8</version>
-		</dependency>
+			<version>1.6.10</version>
+		</dependency>	 
 		
 		<!-- Logging -->
 		<dependency>
