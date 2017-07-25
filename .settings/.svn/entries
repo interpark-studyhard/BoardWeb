@@ -1,0 +1,77 @@
+10
+
+dir
+0
+https://github.com/interpark-studyhard/springquickstart-LeeYoungJoo.git/trunk/.settings
+https://github.com/interpark-studyhard/springquickstart-LeeYoungJoo.git
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+
+
+
+
+
+
+
+
+
+
+
+c9b46867-c19e-cc03-c09d-ce57b7db7bff
+
+org.eclipse.jdt.core.prefs
+file
+
+
+
+add
+
+org.eclipse.m2e.core.prefs
+file
+
+
+
+add
+
+org.springframework.ide.eclipse.beans.core.prefs
+file
+
+
+
+add
+
+org.eclipse.wst.common.project.facet.core.xml
+file
+
+
+
+add
+
+org.eclipse.wst.validation.prefs
+file
+
+
+
+add
+
+org.eclipse.wst.common.component
+file
+
+
+
+add
+
+org.springframework.ide.eclipse.core.prefs
+file
+
+
+
+add
+
