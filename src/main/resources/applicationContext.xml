@@ -21,13 +21,73 @@
 	<bean id="userDAO" class="com.springwork.biz.board.impl.UserDAO"/> 
 -->
 
-<!-- 	<bean id="log" class="com.springwork.biz.common.LogAdvice"/> -->
-	<bean id="log" class="com.springwork.biz.common.Log4jAdvice"/>
+
+<!-- 	<bean id="log" class="com.springwork.biz.common.LogAdvice"/>  -->
+<!-- 	<bean id="log" class="com.springwork.biz.common.Log4jAdvice"/> -->
+<!-- 	<bean id="before" class="com.springwork.biz.common.BeforeAdvice"/>  -->
+<!-- 	<bean id="afterReturning" class="com.springwork.biz.common.AfterReturningAdvice"/> -->
+<!-- 	<bean id="afterThrowing" class="com.springwork.biz.common.AfterThrowingAdvice"/>  -->
+<!-- 	<bean id="after" class="com.springwork.biz.common.AfterAdvice"/>  -->
+	<bean id="around" class="com.springwork.biz.common.AroundAdvice"/>
+	
 	<aop:config>
 		<aop:pointcut id="allPointcut" expression="execution(* com.springwork.biz..*Impl.*(..))" />	
+		<!-- <aop:pointcut id="getPointcut" expression="execution(* com.springwork.biz..*Impl.get*(..))" />		 -->
+		
+<!-- 		
 		<aop:aspect ref="log">
-			<!-- <aop:before pointcut-ref="allPointcut" method="printLog" /> -->
+			<aop:before pointcut-ref="allPointcut" method="printLog" />
+		</aop:aspect> 
+-->
+
+<!-- 		
+		<aop:aspect ref="log">
 			<aop:before pointcut-ref="allPointcut" method="printLogging" />
+		</aop:aspect> 
+-->
+
+<!-- 		
+		<aop:aspect ref="log">
+			<aop:before pointcut-ref="getPointcut" method="printLog" /> 
+		</aop:aspect> 
+-->
+
+<!-- 		
+		<aop:aspect ref="log">
+			<aop:after pointcut-ref="getPointcut" method="printLog" />
+		</aop:aspect> 
+-->
+
+<!-- 		
+		<aop:aspect ref="before">
+			<aop:before pointcut-ref="allPointcut" method="beforeLog" /> 
 		</aop:aspect>
+-->
+
+<!-- 
+		<aop:aspect ref="afterReturning">
+			<aop:after-returning pointcut-ref="getPointcut" method="afterLog" /> 
+		</aop:aspect>
+ -->	
+<!-- 		
+		<aop:aspect ref="afterThrowing"> 
+			<aop:after-returning pointcut-ref="allPointcut" method="exceptionLog" /> 
+		</aop:aspect>
+		<aop:aspect ref="after"> 
+			<aop:after-returning pointcut-ref="allPointcut" method="finallyLog" /> 
+		</aop:aspect>
+ -->	
+ 	
+		<aop:aspect ref="around"> 
+			<aop:around pointcut-ref="allPointcut" method="aroundLog" /> 
+		</aop:aspect>
+	
 	</aop:config>
 </beans>
+
+
+
+
+
+
+
